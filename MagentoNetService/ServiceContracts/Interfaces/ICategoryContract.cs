@@ -11,7 +11,7 @@ namespace MagentoNetService
 	public interface ICategoryContract
 	{
 		[OperationContract]
-		bool SubmitEval (string id); //Eval eval);
+		bool SubmitEval (int id); //Eval eval);
 
 		[OperationContract]
 		string GetTestString();

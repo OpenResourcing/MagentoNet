@@ -16,7 +16,7 @@ namespace MagentoNetService
 
 		#region ICategoryContract Members
 
-		public bool SubmitEval (string id) //Eval eval)
+		public bool SubmitEval (int id) //Eval eval)
 		{
 			CatalogCategory cat = new CatalogCategory ();
 			cat.Id = id;// Guid.NewGuid ().ToString ();
