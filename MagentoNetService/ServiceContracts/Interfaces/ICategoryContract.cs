@@ -17,7 +17,7 @@ namespace MagentoNetService
 		string GetTestString();
 
 		[OperationContract]		
-		List<CatalogCategory> GetEvals();
+		List<CatalogCategory> GetCats();
 
 		[OperationContract]		
 		bool RemoveEval (string id);
