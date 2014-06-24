@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="MagentoNet" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="BasicHttpBinding_ICategoryContract" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_ICategoryContract" soapVersion="1_1" anonymous="optional" definition="http://127.0.0.1:8001/MagentoNetCategory.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://127.0.0.1:8001/MagentoNetCategory.svc?wsdl"><con:part><con:url>http://127.0.0.1:8001/MagentoNetCategory.svc?wsdl</con:url><con:content><![CDATA[<definitions name="service" targetNamespace="http://tempuri.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema targetNamespace="http://tempuri.org/Imports" xmlns:tns="http://tempuri.org/Imports" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import schemaLocation="http://127.0.0.1:8001/MagentoNetCategory.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xs:import schemaLocation="http://127.0.0.1:8001/MagentoNetCategory.svc?xsd=xsd1" namespace="http://tempuri.org/"/>
+      <xs:import schemaLocation="http://127.0.0.1:8001/MagentoNetCategory.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MagentoNetService"/>
+    </xs:schema>
+  </types>
+  <message name="ICategoryContract_SubmitEval_InputMessage">
+    <part name="parameters" element="tns:SubmitEval"/>
+  </message>
+  <message name="ICategoryContract_SubmitEval_OutputMessage">
+    <part name="parameters" element="tns:SubmitEvalResponse"/>
+  </message>
+  <message name="ICategoryContract_GetTestString_InputMessage">
+    <part name="parameters" element="tns:GetTestString"/>
+  </message>
+  <message name="ICategoryContract_GetTestString_OutputMessage">
+    <part name="parameters" element="tns:GetTestStringResponse"/>
+  </message>
+  <message name="ICategoryContract_GetCats_InputMessage">
+    <part name="parameters" element="tns:GetCats"/>
+  </message>
+  <message name="ICategoryContract_GetCats_OutputMessage">
+    <part name="parameters" element="tns:GetCatsResponse"/>
+  </message>
+  <message name="ICategoryContract_RemoveEval_InputMessage">
+    <part name="parameters" element="tns:RemoveEval"/>
+  </message>
+  <message name="ICategoryContract_RemoveEval_OutputMessage">
+    <part name="parameters" element="tns:RemoveEvalResponse"/>
+  </message>
+  <portType name="ICategoryContract">
+    <operation name="SubmitEval">
+      <input wsaw:Action="http://tempuri.org/ICategoryContract/SubmitEval" message="tns:ICategoryContract_SubmitEval_InputMessage"/>
+      <output wsaw:Action="http://tempuri.org/ICategoryContract/SubmitEvalResponse" message="tns:ICategoryContract_SubmitEval_OutputMessage"/>
+    </operation>
+    <operation name="GetTestString">
+      <input wsaw:Action="http://tempuri.org/ICategoryContract/GetTestString" message="tns:ICategoryContract_GetTestString_InputMessage"/>
+      <output wsaw:Action="http://tempuri.org/ICategoryContract/GetTestStringResponse" message="tns:ICategoryContract_GetTestString_OutputMessage"/>
+    </operation>
+    <operation name="GetCats">
+      <input wsaw:Action="http://tempuri.org/ICategoryContract/GetCats" message="tns:ICategoryContract_GetCats_InputMessage"/>
+      <output wsaw:Action="http://tempuri.org/ICategoryContract/GetCatsResponse" message="tns:ICategoryContract_GetCats_OutputMessage"/>
+    </operation>
+    <operation name="RemoveEval">
+      <input wsaw:Action="http://tempuri.org/ICategoryContract/RemoveEval" message="tns:ICategoryContract_RemoveEval_InputMessage"/>
+      <output wsaw:Action="http://tempuri.org/ICategoryContract/RemoveEvalResponse" message="tns:ICategoryContract_RemoveEval_OutputMessage"/>
+    </operation>
+  </portType>
+  <binding name="BasicHttpBinding_ICategoryContract" type="tns:ICategoryContract">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="SubmitEval">
+      <soap:operation soapAction="http://tempuri.org/ICategoryContract/SubmitEval" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetTestString">
+      <soap:operation soapAction="http://tempuri.org/ICategoryContract/GetTestString" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetCats">
+      <soap:operation soapAction="http://tempuri.org/ICategoryContract/GetCats" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemoveEval">
+      <soap:operation soapAction="http://tempuri.org/ICategoryContract/RemoveEval" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="service">
+    <port name="BasicHttpBinding_ICategoryContract" binding="tns:BasicHttpBinding_ICategoryContract">
+      <soap:address location="http://127.0.0.1:8001/MagentoNetCategory.svc"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://127.0.0.1:8001/MagentoNetCategory.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://127.0.0.1:8001/MagentoNetCategory.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/MagentoNetService"/>
+  <xs:element name="SubmitEval">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitEvalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitEvalResult" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestString">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTestStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCats">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCatsResult" nillable="true" type="q1:ArrayOfCatalogCategory" xmlns:q1="http://schemas.datacontract.org/2004/07/MagentoNetService"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEval">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEvalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveEvalResult" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://127.0.0.1:8001/MagentoNetCategory.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MagentoNetService" xmlns:tns="http://schemas.datacontract.org/2004/07/MagentoNetService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CatalogCategory" nillable="true" type="tns:CatalogCategory"/>
+  <xs:complexType name="CatalogCategory">
+    <xs:sequence>
+      <xs:element name="AllChildren" nillable="true" type="xs:string"/>
+      <xs:element name="AvailableSortBy" nillable="true" type="xs:string"/>
+      <xs:element name="Children" nillable="true" type="xs:string"/>
+      <xs:element name="ChildrenCount" nillable="true" type="xs:string"/>
+      <xs:element name="CustomApplyToProducts" nillable="true" type="xs:string"/>
+      <xs:element name="CustomDesign" nillable="true" type="xs:string"/>
+      <xs:element name="CustomDesignFrom" nillable="true" type="xs:string"/>
+      <xs:element name="CustomDesignTo" nillable="true" type="xs:string"/>
+      <xs:element name="CustomLayoutUpdate" nillable="true" type="xs:string"/>
+      <xs:element name="CustomUseParentSettings" nillable="true" type="xs:string"/>
+      <xs:element name="DefaultSortBy" nillable="true" type="xs:string"/>
+      <xs:element name="Description" nillable="true" type="xs:string"/>
+      <xs:element name="DisplayMode" nillable="true" type="xs:string"/>
+      <xs:element name="FilterPriceRange" nillable="true" type="xs:string"/>
+      <xs:element name="Id" type="xs:int"/>
+      <xs:element name="Image" nillable="true" type="xs:string"/>
+      <xs:element name="IncludeInMenu" nillable="true" type="xs:string"/>
+      <xs:element name="IsActive" nillable="true" type="xs:string"/>
+      <xs:element name="IsAnchor" nillable="true" type="xs:string"/>
+      <xs:element name="LandingPage" nillable="true" type="xs:string"/>
+      <xs:element name="Level" nillable="true" type="xs:string"/>
+      <xs:element name="MetaDescription" nillable="true" type="xs:string"/>
+      <xs:element name="MetaKeywords" nillable="true" type="xs:string"/>
+      <xs:element name="MetaTitle" nillable="true" type="xs:string"/>
+      <xs:element name="Name" nillable="true" type="xs:string"/>
+      <xs:element name="PageLayout" nillable="true" type="xs:string"/>
+      <xs:element name="Path" nillable="true" type="xs:string"/>
+      <xs:element name="PathInStore" nillable="true" type="xs:string"/>
+      <xs:element name="Position" nillable="true" type="xs:string"/>
+      <xs:element name="TimeSubmitted" type="xs:dateTime"/>
+      <xs:element name="UrlKey" nillable="true" type="xs:string"/>
+      <xs:element name="UrlPath" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCatalogCategory" nillable="true" type="tns:ArrayOfCatalogCategory"/>
+  <xs:complexType name="ArrayOfCatalogCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CatalogCategory" nillable="true" type="tns:CatalogCategory"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://127.0.0.1:8001/MagentoNetCategory.svc</con:endpoint><con:endpoint>http://127.0.0.1:8001/MagentoNetService.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://tempuri.org/ICategoryContract/GetTestString" name="GetTestString" bindingOperationName="GetTestString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8001/MagentoNetCategory.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetTestString/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICategoryContract/GetTestString"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICategoryContract/RemoveEval" name="RemoveEval" bindingOperationName="RemoveEval" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8001/MagentoNetCategory.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:RemoveEval>
+         <!--Optional:-->
+         <tem:id>?</tem:id>
+      </tem:RemoveEval>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICategoryContract/RemoveEval"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICategoryContract/SubmitEval" name="SubmitEval" bindingOperationName="SubmitEval" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8001/MagentoNetCategory.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:SubmitEval>
+         <!--Optional:-->
+         <tem:id>99</tem:id>
+      </tem:SubmitEval>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICategoryContract/SubmitEval"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICategoryContract/GetCats" name="GetCats" bindingOperationName="GetCats" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8001/MagentoNetCategory.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetCats/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICategoryContract/GetCats"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="BasicHttpBinding_IProductContract" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IProductContract" soapVersion="1_1" anonymous="optional" definition="http://127.0.0.1:8001/MagentoNetProduct.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://127.0.0.1:8001/MagentoNetProduct.svc?wsdl"><con:part><con:url>http://127.0.0.1:8001/MagentoNetProduct.svc?wsdl</con:url><con:content><![CDATA[<definitions name="service" targetNamespace="http://tempuri.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema targetNamespace="http://tempuri.org/Imports" xmlns:tns="http://tempuri.org/Imports" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import schemaLocation="http://127.0.0.1:8001/MagentoNetProduct.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xs:import schemaLocation="http://127.0.0.1:8001/MagentoNetProduct.svc?xsd=xsd1" namespace="http://tempuri.org/"/>
+      <xs:import schemaLocation="http://127.0.0.1:8001/MagentoNetProduct.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MagentoNetService"/>
+    </xs:schema>
+  </types>
+  <message name="IProductContract_SubmitEval2_InputMessage">
+    <part name="parameters" element="tns:SubmitEval2"/>
+  </message>
+  <message name="IProductContract_SubmitEval2_OutputMessage">
+    <part name="parameters" element="tns:SubmitEval2Response"/>
+  </message>
+  <message name="IProductContract_GetTestString2_InputMessage">
+    <part name="parameters" element="tns:GetTestString2"/>
+  </message>
+  <message name="IProductContract_GetTestString2_OutputMessage">
+    <part name="parameters" element="tns:GetTestString2Response"/>
+  </message>
+  <message name="IProductContract_GetEvals2_InputMessage">
+    <part name="parameters" element="tns:GetEvals2"/>
+  </message>
+  <message name="IProductContract_GetEvals2_OutputMessage">
+    <part name="parameters" element="tns:GetEvals2Response"/>
+  </message>
+  <message name="IProductContract_RemoveEval2_InputMessage">
+    <part name="parameters" element="tns:RemoveEval2"/>
+  </message>
+  <message name="IProductContract_RemoveEval2_OutputMessage">
+    <part name="parameters" element="tns:RemoveEval2Response"/>
+  </message>
+  <portType name="IProductContract">
+    <operation name="SubmitEval2">
+      <input wsaw:Action="http://tempuri.org/IProductContract/SubmitEval2" message="tns:IProductContract_SubmitEval2_InputMessage"/>
+      <output wsaw:Action="http://tempuri.org/IProductContract/SubmitEval2Response" message="tns:IProductContract_SubmitEval2_OutputMessage"/>
+    </operation>
+    <operation name="GetTestString2">
+      <input wsaw:Action="http://tempuri.org/IProductContract/GetTestString2" message="tns:IProductContract_GetTestString2_InputMessage"/>
+      <output wsaw:Action="http://tempuri.org/IProductContract/GetTestString2Response" message="tns:IProductContract_GetTestString2_OutputMessage"/>
+    </operation>
+    <operation name="GetEvals2">
+      <input wsaw:Action="http://tempuri.org/IProductContract/GetEvals2" message="tns:IProductContract_GetEvals2_InputMessage"/>
+      <output wsaw:Action="http://tempuri.org/IProductContract/GetEvals2Response" message="tns:IProductContract_GetEvals2_OutputMessage"/>
+    </operation>
+    <operation name="RemoveEval2">
+      <input wsaw:Action="http://tempuri.org/IProductContract/RemoveEval2" message="tns:IProductContract_RemoveEval2_InputMessage"/>
+      <output wsaw:Action="http://tempuri.org/IProductContract/RemoveEval2Response" message="tns:IProductContract_RemoveEval2_OutputMessage"/>
+    </operation>
+  </portType>
+  <binding name="BasicHttpBinding_IProductContract" type="tns:IProductContract">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="SubmitEval2">
+      <soap:operation soapAction="http://tempuri.org/IProductContract/SubmitEval2" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetTestString2">
+      <soap:operation soapAction="http://tempuri.org/IProductContract/GetTestString2" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetEvals2">
+      <soap:operation soapAction="http://tempuri.org/IProductContract/GetEvals2" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemoveEval2">
+      <soap:operation soapAction="http://tempuri.org/IProductContract/RemoveEval2" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="service">
+    <port name="BasicHttpBinding_IProductContract" binding="tns:BasicHttpBinding_IProductContract">
+      <soap:address location="http://127.0.0.1:8001/MagentoNetProduct.svc"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://127.0.0.1:8001/MagentoNetProduct.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://127.0.0.1:8001/MagentoNetProduct.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/MagentoNetService"/>
+  <xs:element name="SubmitEval2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitEval2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitEval2Result" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestString2">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestString2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTestString2Result" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEvals2">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEvals2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetEvals2Result" nillable="true" type="q1:ArrayOfCatalogProduct" xmlns:q1="http://schemas.datacontract.org/2004/07/MagentoNetService"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEval2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEval2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveEval2Result" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://127.0.0.1:8001/MagentoNetProduct.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MagentoNetService" xmlns:tns="http://schemas.datacontract.org/2004/07/MagentoNetService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CatalogProduct" nillable="true" type="tns:CatalogProduct"/>
+  <xs:complexType name="CatalogProduct">
+    <xs:sequence>
+      <xs:element name="Comments2" nillable="true" type="xs:string"/>
+      <xs:element name="Id2" nillable="true" type="xs:string"/>
+      <xs:element name="Submitter2" nillable="true" type="xs:string"/>
+      <xs:element name="TimeSubmitted2" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCatalogProduct" nillable="true" type="tns:ArrayOfCatalogProduct"/>
+  <xs:complexType name="ArrayOfCatalogProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CatalogProduct" nillable="true" type="tns:CatalogProduct"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://127.0.0.1:8001/MagentoNetProduct.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://tempuri.org/IProductContract/GetEvals2" name="GetEvals2" bindingOperationName="GetEvals2" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8001/MagentoNetProduct.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetEvals2/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IProductContract/GetEvals2"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/IProductContract/GetTestString2" name="GetTestString2" bindingOperationName="GetTestString2" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8001/MagentoNetProduct.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetTestString2/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IProductContract/GetTestString2"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/IProductContract/RemoveEval2" name="RemoveEval2" bindingOperationName="RemoveEval2" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8001/MagentoNetProduct.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:RemoveEval2>
+         <!--Optional:-->
+         <tem:id>?</tem:id>
+      </tem:RemoveEval2>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IProductContract/RemoveEval2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/IProductContract/SubmitEval2" name="SubmitEval2" bindingOperationName="SubmitEval2" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8001/MagentoNetProduct.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:SubmitEval2>
+         <!--Optional:-->
+         <tem:id>?</tem:id>
+      </tem:SubmitEval2>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IProductContract/SubmitEval2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
