@@ -27,7 +27,7 @@ check_daemon_enabled () {
 case "$1" in
   start)
     if check_daemon_enabled ; then
-        if ! [ -d /var/run/evalservice ]; then
+        if ! [ -d /var/run/magentonetservice ]; then
                 mkdir /var/run/magentonetservice
         fi
 

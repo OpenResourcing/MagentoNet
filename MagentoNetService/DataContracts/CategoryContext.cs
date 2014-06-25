@@ -22,11 +22,14 @@ namespace MagentoNetService
 				}
 
 				public DbDataAdapter getDbDataAdaptor(DbConnection connection){
+					return getDbDataAdaptor(connection, "");
+				}
+				public DbDataAdapter getDbDataAdaptor(DbConnection connection, string queryString){
 
 					using (connection) {
 						// Define the query. 
-						string queryString =
-							"SELECT entity_id, entity_type_id, attribute_set_id, parent_id, position, path FROM catalog_category_entity";
+						if (String.IsNullOrEmpty(queryString))
+							queryString = "SELECT entity_id, entity_type_id, attribute_set_id, parent_id, position, path FROM catalog_category_entity";
 
 						// Create the select command.
 						DbCommand command = dbFactory.CreateCommand();
@@ -42,10 +45,13 @@ namespace MagentoNetService
 						builder.DataAdapter = adapter;
 
 						// Get the insert, update and delete commands.
-						adapter.InsertCommand = builder.GetInsertCommand();
-						adapter.UpdateCommand = builder.GetUpdateCommand();
-						adapter.DeleteCommand = builder.GetDeleteCommand();
-
+						try{
+								adapter.InsertCommand = builder.GetInsertCommand();
+								adapter.UpdateCommand = builder.GetUpdateCommand();
+								adapter.DeleteCommand = builder.GetDeleteCommand();
+						} catch (Exception e){
+							Console.WriteLine(String.Format("error: {0}",e.Message));
+						}
 						return adapter;
 					}
 				}

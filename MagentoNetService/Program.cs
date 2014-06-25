@@ -12,6 +12,8 @@ using System.Threading;
 namespace MagentoNetService
 {
 	class ServiceThread {
+		public bool stopFlag = false;  
+
 		public void startThread(){
 			// set MONO_STRICT_MS_COMPLIANT
 
@@ -26,16 +28,20 @@ namespace MagentoNetService
 			host.Open ();
 			host2.Open ();
 
-			while (true)
+			while (!stopFlag)
 			{
 				//just continue to so your service'ing stuff
 //				Console.WriteLine("Alpha.Beta is running in its own thread.");
 			}
+
+			host.Close ();
+			host2.Close ();
 		}
 	}
 
 	class Program
 	{
+		private static bool stopFlag = false;
 		public static int Main(string[] args)
 		{
 
@@ -56,12 +62,12 @@ namespace MagentoNetService
 			Console.ReadLine ();
 			oThread.Abort ();
 */
-			while (true) {
+			while (!stopFlag) {
 				// Put the Main thread to sleep for 1 millisecond to allow oThread
 				// to do some work:
 				Thread.Sleep (1);
 			}
-
+			thread.stopFlag = true;
 			return 0;
 
 		}
