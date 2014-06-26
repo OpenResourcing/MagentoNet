@@ -10,7 +10,7 @@ namespace MagentoNetService
 	public class CatalogCategory
 	{
 		[DataMember]
-		public int Id;
+		public int? Id;
 		[DataMember]
 		public string Name;
 		[DataMember]

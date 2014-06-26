@@ -16,6 +16,9 @@ namespace MagentoNetService
 		[OperationContract]
 		string GetTestString();
 
+		[OperationContract]
+		CatalogCategory GetCatItem(int Id);
+
 		[OperationContract]		
 		List<CatalogCategory> GetCats();
 
