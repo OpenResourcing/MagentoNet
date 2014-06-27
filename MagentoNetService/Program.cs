@@ -30,6 +30,7 @@ namespace MagentoNetService
 
 			while (!stopFlag)
 			{
+				Thread.Sleep (100);
 				//just continue to so your service'ing stuff
 //				Console.WriteLine("Alpha.Beta is running in its own thread.");
 			}
