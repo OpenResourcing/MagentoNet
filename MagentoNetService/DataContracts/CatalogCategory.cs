@@ -14,7 +14,7 @@ namespace MagentoNetService
 		[DataMember]
 		public string Name;
 		[DataMember]
-		public string IsActive;
+		public bool IsActive;
 		[DataMember]
 		public string UrlKey;
 		[DataMember]
@@ -32,7 +32,7 @@ namespace MagentoNetService
 		[DataMember]
 		public string LandingPage;
 		[DataMember]
-		public string IsAnchor;
+		public bool IsAnchor;
 		[DataMember]
 		public string Path;
 		[DataMember]
@@ -58,13 +58,13 @@ namespace MagentoNetService
 		[DataMember]
 		public string Level;
 		[DataMember]
-		public string ChildrenCount;
+		public int? ChildrenCount;
 		[DataMember]
 		public string AvailableSortBy;
 		[DataMember]
 		public string DefaultSortBy;
 		[DataMember]
-		public string IncludeInMenu;
+		public bool IncludeInMenu;
 		[DataMember]
 		public string CustomUseParentSettings;
 		[DataMember]

@@ -39,12 +39,13 @@ namespace MagentoNetService
 						// Create the DbDataAdapter.
 						DbDataAdapter adapter = dbFactory.CreateDataAdapter();
 						adapter.SelectCommand = command;
-
+				/*
 						// Create the DbCommandBuilder.
 						DbCommandBuilder builder = dbFactory.CreateCommandBuilder();
 						builder.DataAdapter = adapter;
 
 						// Get the insert, update and delete commands.
+
 						try{
 								adapter.InsertCommand = builder.GetInsertCommand();
 								adapter.UpdateCommand = builder.GetUpdateCommand();
@@ -52,6 +53,7 @@ namespace MagentoNetService
 						} catch (Exception e){
 							Console.WriteLine(String.Format("error: {0}",e.Message));
 						}
+				*/
 						return adapter;
 					}
 				}
