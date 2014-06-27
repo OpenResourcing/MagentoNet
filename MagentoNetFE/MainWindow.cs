@@ -3,9 +3,10 @@ using Gtk;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.ServiceModel.Channels;
-using MagentoNetService;
+using MagentoNetFE.MagentoNetService;
 using System.Collections.Generic;
 
+/*
 public class CategoryClient : ClientBase<ICategoryContract>, ICategoryContract
 	{
 		public CategoryClient (Binding binding, EndpointAddress address)
@@ -33,9 +34,10 @@ public class CategoryClient : ClientBase<ICategoryContract>, ICategoryContract
 			return Channel.RemoveEval (id);
 		}
 	}
+	*/
 	public partial class MainWindow: Gtk.Window
 	{
-		CategoryClient client;
+		CategoryContractClient client;
 		public MainWindow () : base (Gtk.WindowType.Toplevel)
 		{
 			Build ();
@@ -46,7 +48,7 @@ public class CategoryClient : ClientBase<ICategoryContract>, ICategoryContract
 			var address = new EndpointAddress( "http://localhost:8001/MagentoNetCategory.svc");
 			//			var address = new EndpointAddress( "http://localhost:8001/EvalService.svc/WebEvalService");
 
-			client = new CategoryClient (binding, address);
+			client = new CategoryContractClient (binding, address);
 			Console.WriteLine (client.GetTestString());
 
 
@@ -60,10 +62,14 @@ public class CategoryClient : ClientBase<ICategoryContract>, ICategoryContract
 
 		protected void onBtnClick (object sender, EventArgs e)
 		{
+		try{
 			int defId = 3;
 			int.TryParse (txtID.Text, out defId);
-			CatalogCategory thisCat = client.GetCatItem(defId);
+			GetCatItemResult thisCat = client.GetCatItem(defId);
 			lblOutput.Text = thisCat.Name;
+		}catch (Exception exc){
+			Console.WriteLine(String.Format("error: {0} in : {1}",exc.Message, exc.StackTrace));
+		}
 		}
 	}
 

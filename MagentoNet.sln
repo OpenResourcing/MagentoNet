@@ -21,6 +21,6 @@ Global
 		{B3351091-093B-4F14-B36D-8225EE7AF0E4}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = MagentoNetService\MagentoNetService.csproj
+		StartupItem = MagentoNetFE\MagentoNetFE.csproj
 	EndGlobalSection
 EndGlobal
