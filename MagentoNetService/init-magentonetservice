@@ -1,5 +1,5 @@
 #!/bin/sh -e
-NAME=magentonetservice
+NAME=magentonet
 PATH_BIN=/bin:/usr/bin:/sbin:/usr/sbin
 DAEMON="/home/dizimatt/Documents/mono/MagentoNet/MagentoNetService/init-startMagentoNetService.sh"
 PIDFILE=/var/run/$NAME.pid
