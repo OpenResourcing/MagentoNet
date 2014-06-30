@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bcbe6a7b-b7e1-44f4-afbd-141b1fb6d670" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>false</GenerateTaskBasedAsynchronousMethod>
+    <GenerateEventBasedAsynchronousMethods>false</GenerateEventBasedAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.1.109:8001/MagentoNetCategory.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MagentoNetCategory.wsdl" MetadataType="Wsdl" ID="234a51cf-82ca-4c92-b760-c8b2d781d408" SourceId="1" SourceUrl="http://192.168.1.109:8001/MagentoNetCategory.svc?wsdl" />
+    <MetadataFile FileName="MagentoNetCategory.xsd" MetadataType="Schema" ID="09d7b066-bb16-403c-b9e1-0cf21216a3cd" SourceId="1" SourceUrl="http://192.168.1.109:8001/MagentoNetCategory.svc?xsd=xsd0" />
+    <MetadataFile FileName="MagentoNetCategory1.xsd" MetadataType="Schema" ID="dbabb3a2-8080-4366-8e30-57418ee58994" SourceId="1" SourceUrl="http://192.168.1.109:8001/MagentoNetCategory.svc?xsd=xsd1" />
+    <MetadataFile FileName="MagentoNetCategory2.xsd" MetadataType="Schema" ID="08d77896-662d-4666-9ee6-381a2c55fb4a" SourceId="1" SourceUrl="http://192.168.1.109:8001/MagentoNetCategory.svc?xsd=xsd2" />
+  </Metadata>
+</ReferenceGroup>

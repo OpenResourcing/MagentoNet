@@ -47,17 +47,24 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Views\CatItem\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Service References\MagentoNetCategoryClient\Reference.cs">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\CatItemController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -71,6 +78,7 @@
     <Content Include="Content\js\jquery-2.1.1.min.js" />
     <Content Include="Content\js\underscore-min.js" />
     <Content Include="Content\js\bb.js" />
+    <Content Include="Views\CatItem\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -84,5 +92,19 @@
   <ItemGroup>
     <None Include="Content\js\underscore-min.map" />
     <None Include="Content\js\backbone-min.map" />
+    <None Include="Service References\MagentoNetCategoryClient\MagentoNetCategory.wsdl" />
+    <None Include="Service References\MagentoNetCategoryClient\MagentoNetCategory.xsd" />
+    <None Include="Service References\MagentoNetCategoryClient\MagentoNetCategory1.xsd" />
+    <None Include="Service References\MagentoNetCategoryClient\MagentoNetCategory2.xsd" />
+    <None Include="Service References\MagentoNetCategoryClient\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\MagentoNetCategoryClient" />
   </ItemGroup>
 </Project>

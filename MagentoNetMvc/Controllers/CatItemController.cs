@@ -4,29 +4,29 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
-using System.Web.WebPages;
 using MagentoNetMvc.MagentoNetCategoryClient;
 using System.ServiceModel;
-//using tempuri.org;
 
+//using tempuri.org;
 namespace MagentoNetMvc.Controllers
 {
-	public class HomeController : Controller
+	public class CatItemController : Controller
 	{
-		public ActionResult Index ()
+		public ActionResult Index (int id)
 		{
 			ViewBag.Message = "Welcome to ASP.NET MVC on Mono! (viewbag)";
-//			ViewData ["Message"] = "Welcome to ASP.NET MVC on Mono!";
+			//			ViewData ["Message"] = "Welcome to ASP.NET MVC on Mono!";
 
 			var binding = new BasicHttpBinding ();
 			var address = new EndpointAddress( "http://192.168.1.109:8001/MagentoNetCategory.svc");
 
 			ICategoryContract client = new CategoryContractClient (binding, address);
-			IEnumerable<GetCatItemResult> cats = client.GetCats().ToList();
-		
-			ViewBag.cats = cats;
+			GetCatItemResult catItem = client.GetCatItem(id);
+
+			ViewBag.catItem = catItem;
 			return View ();
 		}
+
 	}
 }
 

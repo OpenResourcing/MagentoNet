@@ -15,6 +15,11 @@ namespace MagentoNetMvc
 			routes.IgnoreRoute ("{resource}.axd/{*pathInfo}");
 
 			routes.MapRoute (
+				"CatItem",
+				"CatItem/{id}",
+				new { controller = "CatItem", action = "Index", id = "3" }
+			);
+			routes.MapRoute (
 				"Default",
 				"{controller}/{action}/{id}",
 				new { controller = "Home", action = "Index", id = "" }

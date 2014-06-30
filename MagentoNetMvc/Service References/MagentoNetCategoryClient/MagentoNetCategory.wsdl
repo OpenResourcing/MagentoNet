@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://tempuri.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="service" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema xmlns:tns="http://tempuri.org/Imports" targetNamespace="http://tempuri.org/Imports" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import schemaLocation="http://192.168.1.109:8001/MagentoNetCategory.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:import schemaLocation="http://192.168.1.109:8001/MagentoNetCategory.svc?xsd=xsd1" namespace="http://tempuri.org/" />
+      <xs:import schemaLocation="http://192.168.1.109:8001/MagentoNetCategory.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MagentoNetService" />
+    </xs:schema>
+  </types>
+  <message name="ICategoryContract_SubmitEval_InputMessage">
+    <part name="parameters" element="tns:SubmitEval" />
+  </message>
+  <message name="ICategoryContract_SubmitEval_OutputMessage">
+    <part name="parameters" element="tns:SubmitEvalResponse" />
+  </message>
+  <message name="ICategoryContract_GetTestString_InputMessage">
+    <part name="parameters" element="tns:GetTestString" />
+  </message>
+  <message name="ICategoryContract_GetTestString_OutputMessage">
+    <part name="parameters" element="tns:GetTestStringResponse" />
+  </message>
+  <message name="ICategoryContract_GetCatItem_InputMessage">
+    <part name="parameters" element="tns:GetCatItem" />
+  </message>
+  <message name="ICategoryContract_GetCatItem_OutputMessage">
+    <part name="parameters" element="tns:GetCatItemResponse" />
+  </message>
+  <message name="ICategoryContract_GetCats_InputMessage">
+    <part name="parameters" element="tns:GetCats" />
+  </message>
+  <message name="ICategoryContract_GetCats_OutputMessage">
+    <part name="parameters" element="tns:GetCatsResponse" />
+  </message>
+  <message name="ICategoryContract_RemoveEval_InputMessage">
+    <part name="parameters" element="tns:RemoveEval" />
+  </message>
+  <message name="ICategoryContract_RemoveEval_OutputMessage">
+    <part name="parameters" element="tns:RemoveEvalResponse" />
+  </message>
+  <portType name="ICategoryContract">
+    <operation name="SubmitEval">
+      <input wsaw:Action="http://tempuri.org/ICategoryContract/SubmitEval" message="tns:ICategoryContract_SubmitEval_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/ICategoryContract/SubmitEvalResponse" message="tns:ICategoryContract_SubmitEval_OutputMessage" />
+    </operation>
+    <operation name="GetTestString">
+      <input wsaw:Action="http://tempuri.org/ICategoryContract/GetTestString" message="tns:ICategoryContract_GetTestString_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/ICategoryContract/GetTestStringResponse" message="tns:ICategoryContract_GetTestString_OutputMessage" />
+    </operation>
+    <operation name="GetCatItem">
+      <input wsaw:Action="http://tempuri.org/ICategoryContract/GetCatItem" message="tns:ICategoryContract_GetCatItem_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/ICategoryContract/GetCatItemResponse" message="tns:ICategoryContract_GetCatItem_OutputMessage" />
+    </operation>
+    <operation name="GetCats">
+      <input wsaw:Action="http://tempuri.org/ICategoryContract/GetCats" message="tns:ICategoryContract_GetCats_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/ICategoryContract/GetCatsResponse" message="tns:ICategoryContract_GetCats_OutputMessage" />
+    </operation>
+    <operation name="RemoveEval">
+      <input wsaw:Action="http://tempuri.org/ICategoryContract/RemoveEval" message="tns:ICategoryContract_RemoveEval_InputMessage" />
+      <output wsaw:Action="http://tempuri.org/ICategoryContract/RemoveEvalResponse" message="tns:ICategoryContract_RemoveEval_OutputMessage" />
+    </operation>
+  </portType>
+  <binding name="BasicHttpBinding_ICategoryContract" type="tns:ICategoryContract">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="SubmitEval">
+      <soap:operation soapAction="http://tempuri.org/ICategoryContract/SubmitEval" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetTestString">
+      <soap:operation soapAction="http://tempuri.org/ICategoryContract/GetTestString" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetCatItem">
+      <soap:operation soapAction="http://tempuri.org/ICategoryContract/GetCatItem" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetCats">
+      <soap:operation soapAction="http://tempuri.org/ICategoryContract/GetCats" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RemoveEval">
+      <soap:operation soapAction="http://tempuri.org/ICategoryContract/RemoveEval" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="service">
+    <port name="BasicHttpBinding_ICategoryContract" binding="tns:BasicHttpBinding_ICategoryContract">
+      <soap:address location="http://192.168.1.109:8001/MagentoNetCategory.svc" />
+    </port>
+  </service>
+</definitions>

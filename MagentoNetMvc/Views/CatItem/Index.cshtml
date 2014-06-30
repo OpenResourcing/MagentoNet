@@ -6,9 +6,5 @@
 <div id="production-list">assets-list-loading...</div>
 
 <div id="cats">
-@foreach (MagentoNetMvc.MagentoNetCategoryClient.GetCatItemResult cat in ViewBag.cats)
-	{
-	    @cat.Name<br />
-	}
-
+@Html.Raw(ViewBag.catItem.Description)
 </div>
