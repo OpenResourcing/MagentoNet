@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
+using System.Web.WebPages;
 
 namespace MagentoNetMvc.Controllers
 {
@@ -11,7 +12,8 @@ namespace MagentoNetMvc.Controllers
 	{
 		public ActionResult Index ()
 		{
-			ViewData ["Message"] = "Welcome to ASP.NET MVC on Mono!";
+			ViewBag.Message = "Welcome to ASP.NET MVC on Mono! (viewbag)";
+//			ViewData ["Message"] = "Welcome to ASP.NET MVC on Mono!";
 			return View ();
 		}
 	}
