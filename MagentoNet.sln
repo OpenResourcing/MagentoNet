@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagentoNetService", "Magent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagentoNetFE", "MagentoNetFE\MagentoNetFE.csproj", "{2754FF1B-2368-4983-A2FD-B4F07B66BA2F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagentoNetMvc", "MagentoNetMvc\MagentoNetMvc.csproj", "{E46C1494-95A7-4BBC-96B3-D1CAF169A698}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,8 +21,12 @@ Global
 		{B3351091-093B-4F14-B36D-8225EE7AF0E4}.Debug|x86.Build.0 = Debug|x86
 		{B3351091-093B-4F14-B36D-8225EE7AF0E4}.Release|x86.ActiveCfg = Release|x86
 		{B3351091-093B-4F14-B36D-8225EE7AF0E4}.Release|x86.Build.0 = Release|x86
+		{E46C1494-95A7-4BBC-96B3-D1CAF169A698}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E46C1494-95A7-4BBC-96B3-D1CAF169A698}.Debug|x86.Build.0 = Debug|Any CPU
+		{E46C1494-95A7-4BBC-96B3-D1CAF169A698}.Release|x86.ActiveCfg = Release|Any CPU
+		{E46C1494-95A7-4BBC-96B3-D1CAF169A698}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = MagentoNetService\MagentoNetService.csproj
+		StartupItem = MagentoNetMvc\MagentoNetMvc.csproj
 	EndGlobalSection
 EndGlobal
