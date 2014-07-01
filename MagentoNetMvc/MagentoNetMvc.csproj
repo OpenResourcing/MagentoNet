@@ -79,6 +79,7 @@
     <Content Include="Content\js\underscore-min.js" />
     <Content Include="Content\js\bb.js" />
     <Content Include="Views\CatItem\Index.cshtml" />
+    <Content Include="Content\js\catitem-init.js" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -1,4 +1,11 @@
 ﻿<script src="Content/js/bb.js"></script>
+<script type="text/javascript">
+jQuery(function () {
+	var mymodel = new TestModel ({nameValue : "newName", ageValue : "newAge"});
+	var view = new ListView({model : mymodel});
+	$("#production-list").html(view.render().el);
+});
+</script>
 
 <h2>@ViewBag.Message</h2>
 
@@ -19,3 +26,4 @@
 	}
 
 </div>
+

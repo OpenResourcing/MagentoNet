@@ -1,5 +1,26 @@
-﻿<script src="Content/js/bb.js"></script>
-
+﻿<script src="/Content/js/catitem-init.js"></script>
+<script type="text/template" id="search_template">
+  <label>Search</label>
+  <input type="text" id="name" value="<%= nameValue %>" />
+  <input type="text" id="age" class="redclass" value="<%= ageValue %>" />
+  <textarea id="description">
+  <%= descriptionValue %>
+  </textarea>
+  <input type="button" id="search_button" value="Search" />
+</script>
+<script type="text/javascript">
+jQuery(function () {
+	var mymodel = new TestModel (
+		{
+			nameValue : "@ViewBag.catItem.Name", 
+			ageValue : "newAge",
+			descriptionValue : "@Html.Raw(ViewBag.catItem.Description)"
+		}
+	);
+	var view = new ListView({model : mymodel});
+	$("#production-list").html(view.render().el);
+});
+</script>
 <h2>@ViewBag.Message</h2>
 
 
