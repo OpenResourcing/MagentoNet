@@ -15,7 +15,7 @@ namespace MagentoNetMvc.Controllers
 	{
 		public ActionResult Index ()
 		{
-			ViewBag.Message = "Welcome to ASP.NET MVC on Mono! (viewbag)";
+/*			ViewBag.Message = "Welcome to ASP.NET MVC on Mono! (viewbag)";
 //			ViewData ["Message"] = "Welcome to ASP.NET MVC on Mono!";
 
 			var binding = new BasicHttpBinding ();
@@ -23,8 +23,8 @@ namespace MagentoNetMvc.Controllers
 
 			ICategoryContract client = new CategoryContractClient (binding, address);
 			IEnumerable<GetCatItemResult> cats = client.GetCats().ToList();
-		
-			ViewBag.cats = cats;
+*/		
+			ViewBag.cats = new List<GetCatItemResult>();
 			return View ();
 		}
 	}
