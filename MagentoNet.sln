@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagentoNetFE", "MagentoNetF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagentoNetMvc", "MagentoNetMvc\MagentoNetMvc.csproj", "{E46C1494-95A7-4BBC-96B3-D1CAF169A698}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3726D008-4DC5-4A7A-8173-A3855133B28A}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -25,6 +31,8 @@ Global
 		{E46C1494-95A7-4BBC-96B3-D1CAF169A698}.Debug|x86.Build.0 = Debug|Any CPU
 		{E46C1494-95A7-4BBC-96B3-D1CAF169A698}.Release|x86.ActiveCfg = Release|Any CPU
 		{E46C1494-95A7-4BBC-96B3-D1CAF169A698}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = MagentoNetFE\MagentoNetFE.csproj
