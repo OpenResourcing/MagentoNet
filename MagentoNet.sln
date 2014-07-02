@@ -27,6 +27,6 @@ Global
 		{E46C1494-95A7-4BBC-96B3-D1CAF169A698}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = MagentoNetMvc\MagentoNetMvc.csproj
+		StartupItem = MagentoNetFE\MagentoNetFE.csproj
 	EndGlobalSection
 EndGlobal

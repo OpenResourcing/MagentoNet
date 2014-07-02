@@ -50,6 +50,7 @@
     <Reference Include="MySql.Web">
       <HintPath>..\packages\MySql.Web.6.8.3\lib\net40\MySql.Web.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework, Version=2.6.0.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="ServiceContracts\CategoryContract.cs" />
     <Compile Include="ServiceContracts\ProductContract.cs" />
     <Compile Include="DataContracts\CategoryContext.cs" />
+    <Compile Include="UnitTests\ServiceTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -74,5 +76,6 @@
     <Folder Include="ServiceContracts\" />
     <Folder Include="DataContracts\" />
     <Folder Include="ServiceContracts\Interfaces\" />
+    <Folder Include="UnitTests\" />
   </ItemGroup>
 </Project>
