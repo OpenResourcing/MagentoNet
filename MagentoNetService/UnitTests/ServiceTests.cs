@@ -36,6 +36,14 @@ namespace MagentoNetService
 		}
 
 		[Test ()]
+		public void GetTestString ()
+		{
+			cc = new CategoryContract ();
+			string testString = cc.GetTestString ();
+			Assert.IsNotNull (testString);
+		}
+
+		[Test ()]
 		public void GetAllCatItems ()
 		{
 			cc = new CategoryContract ();

@@ -20,7 +20,7 @@ namespace MagentoNetService
 		List<CatalogCategory> catsList = new List<CatalogCategory> ();
 		CatalogCategory catItem = new CatalogCategory();
 
-		private void ReloadAttributes(CategoryContext categoryContext){
+		private bool ReloadAttributes(CategoryContext categoryContext){
 			DbConnection connection = categoryContext.getConnection ();
 
 			if (attrList.Count == 0) {
@@ -41,13 +41,14 @@ namespace MagentoNetService
 
 				} catch (Exception e) {
 					Console.WriteLine (String.Format ("error fetching attributes for catalog/category: {0}", e.Message));
+					return false;
 				}
 			} else {
 				// otherwise this list is already propulated, reuse it
 				Console.WriteLine ("using cached attributes for catalog/category ");
 			}
 			connection.Close ();
-
+			return true;
 		}
 
 		#region ICategoryContract Members
@@ -59,14 +60,16 @@ namespace MagentoNetService
 */
 			// otherwise if this haven't previously been fetched....
 
-			CategoryContext _categoryContext = new CategoryContext ();
-			ReloadAttributes (_categoryContext);
+			catItem = new CatalogCategory ();
 
+			CategoryContext _categoryContext = new CategoryContext ();
+			if (!ReloadAttributes (_categoryContext)) {
+				return catItem;
+			}
 			// adapter = null;
 			DbConnection connection = _categoryContext.getConnection ();
 
 
-			catItem = new CatalogCategory ();
 
 			string sqlStringInit = "SELECT ent.entity_id, " +
 				"ent.entity_type_id, " +
@@ -201,8 +204,12 @@ namespace MagentoNetService
 			}*/
 			// otherwise, if the list hasn't previously been fetched...
 
+			catsList = new List<CatalogCategory> ();
+
 			CategoryContext _categoryContext = new CategoryContext ();
-			ReloadAttributes (_categoryContext);
+			if (!ReloadAttributes (_categoryContext)){
+				return catsList;
+			}
 
 			DbConnection connection = _categoryContext.getConnection ();
 
@@ -291,7 +298,6 @@ namespace MagentoNetService
 					//where _cat.Field<uint>("entity_id") == 3
 					select _cat;
 
-				catsList = new List<CatalogCategory> ();
 				foreach (DataRow p in query)
 				{
 						CatalogCategory _newCategory = new CatalogCategory ()
