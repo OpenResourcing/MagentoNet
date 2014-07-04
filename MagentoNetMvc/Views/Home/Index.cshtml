@@ -1,29 +1,5 @@
-﻿<script src="Content/js/bb.js"></script>
-<script type="text/javascript">
-jQuery(function () {
-	var mymodel = new TestModel ({nameValue : "newName", ageValue : "newAge"});
-	var view = new ListView({model : mymodel});
-	$("#production-list").html(view.render().el);
-});
-</script>
+﻿
+          <H1>@ViewBag.Title</H1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
 
-<h2>@ViewBag.Message</h2>
-
-<script type="text/template" id="search_template">
-  <label>Search</label>
-  <input type="text" id="name" value="<%= nameValue %>" />
-  <input type="text" id="age" class="redclass" value="<%= ageValue %>" />
-  <input type="button" id="search_button" value="Search" />
-</script>
-
-<div id="production-list">assets-list-loading...</div>
-  <H1>tada!</H1>
-
-<div id="cats">
-@foreach (MagentoNetMvc.MagentoNetCategoryClient.GetCatItemResult cat in ViewBag.cats)
-	{
-	    @cat.Name<br />
-	}
-
-</div>
 

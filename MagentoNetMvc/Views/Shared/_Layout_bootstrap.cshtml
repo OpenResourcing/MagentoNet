@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="/Content/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/Content/css/bootstrap-theme.min.css">
+    <!-- Custom styles for this template -->
+    <link href="/Content/css/starter-template.css" rel="stylesheet">
+    <link href="/Content/css/sticky-footer-navbar.css" rel="stylesheet">
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+  
+  @RenderPage("~/Views/Shared/_Header.cshtml");
+
+    <div class="container">
+
+  		<div class="starter-template">
+
+	@RenderBody()
+
+		</div>
+	</div>
+    <div class="footer">
+      <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+      </div>
+    </div>
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+	<script src="/Content/js/jquery-2.1.1.min.js"></script>
+	<script src="/Content/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+

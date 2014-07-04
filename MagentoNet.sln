@@ -35,6 +35,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = MagentoNetService\MagentoNetService.csproj
+		StartupItem = MagentoNetMvc\MagentoNetMvc.csproj
 	EndGlobalSection
 EndGlobal

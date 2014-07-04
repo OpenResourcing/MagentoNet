@@ -1,20 +1,20 @@
-﻿<script src="/Content/js/catitem-init.js"></script>
+﻿@{Layout="~/Views/Shared/_Layout_bootstrap_backbone.cshtml";}
+<script src="/Content/js/catitem-init.js"></script>
+
 <script type="text/template" id="search_template">
-  <label>Search</label>
-  <input type="text" id="name" value="<%= nameValue %>" />
-  <input type="text" id="age" class="redclass" value="<%= ageValue %>" />
+  <label>CatName:</label> <input type="text" id="name" value="<%= nameValue %>" /><br />
+  <label>CatDescription:</label> <br />
   <textarea id="description">
   <%= descriptionValue %>
   </textarea>
-  <input type="button" id="search_button" value="Search" />
 </script>
+
 <script type="text/javascript">
 jQuery(function () {
 	var mymodel = new TestModel (
 		{
 			nameValue : "@ViewBag.catItem.Name", 
-			ageValue : "newAge",
-			descriptionValue : "@Html.Raw(ViewBag.catItem.Description)"
+			descriptionValue : "@Html.Raw(HttpUtility.HtmlDecode(ViewBag.catItem.Description))"
 		}
 	);
 	var view = new ListView({model : mymodel});
@@ -24,8 +24,14 @@ jQuery(function () {
 <h2>@ViewBag.Message</h2>
 
 
-<div id="production-list">assets-list-loading...</div>
+<div id="production-list" style="align: left;">assets-list-loading...</div>
 
 <div id="cats">
+	  in case you missed it the first time, this is the description:...<br />
+
 @Html.Raw(ViewBag.catItem.Description)
 </div>
+<script type="text/javascript">
+	  $("ul.nav li").removeClass("active");
+	  $("ul.nav li#menu2").addClass("active");
+</script>

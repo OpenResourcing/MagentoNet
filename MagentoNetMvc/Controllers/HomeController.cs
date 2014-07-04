@@ -24,7 +24,7 @@ namespace MagentoNetMvc.Controllers
 			ICategoryContract client = new CategoryContractClient (binding, address);
 			IEnumerable<GetCatItemResult> cats = client.GetCats().ToList();
 */		
-			ViewBag.cats = new List<GetCatItemResult>();
+			ViewBag.Title = "Welcome to MagentoNet";
 			return View ();
 		}
 	}
