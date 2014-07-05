@@ -19,32 +19,75 @@
 -->
 <html>
     <head>
-	    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-		<!--script type="text/javascript">
-			$(document).ready(
-			  function () {
-			    alert ("document ready");
-			  }
-			);
-        </script-->
+	    
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+		  
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
+        
+    <div class="navbar navbar-inverse navbar-fixed-top navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active" id="menu1"><a href="/">Home</a></li>
+            <li id="menu2"><a href="/CatItem/2">CatItem Example</a></li>
+            <li id="menu3"><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+    <div class="container">
+  		<div class="starter-template">
+		 <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+		 <div class="app">
             <h1>Apache Cordova</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready... WOOT!</p>
             </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+		</div>
+	</div>
+	
+    <div class="footer">
+      <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+      </div>
+    </div>
+
+
+	    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript">
+			/*$(document).ready(
+			  function () {
+			    alert ("document ready");
+			  }
+			);*/
+        </script>
+		<script type="text/javascript" src="js/underscore-min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript">
             app.initialize();
 		</script>
+		
     </body>
 </html>

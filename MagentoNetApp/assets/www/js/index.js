@@ -43,7 +43,7 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-		
+		/*
 	    var url = "http://192.168.1.109:8001/MagentoNetCategory.svc";
             var request = "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">" +
                     "<s:Body>" +
@@ -66,7 +66,7 @@ var app = {
                     alert("error: "+jqXHR.responseText+" : "+errorThrown + " : " + textStatus );
                 }
             });
-		
+		*/
         console.log('Received Event: ' + id);
     }
 };
