@@ -13,8 +13,8 @@
 jQuery(function () {
 	var mymodel = new TestModel (
 		{
-			nameValue : "@ViewBag.catItem.Name", 
-			descriptionValue : "@Html.Raw(HttpUtility.HtmlDecode(ViewBag.catItem.Description))"
+			nameValue : "@ViewBag.catInfo.name", 
+			descriptionValue : "@Html.Raw(ViewBag.catInfo.description)"
 		}
 	);
 	var view = new ListView({model : mymodel});
@@ -27,9 +27,12 @@ jQuery(function () {
 <div id="production-list" style="align: left;">assets-list-loading...</div>
 
 <div id="cats">
-	  in case you missed it the first time, this is the description:...<br />
-
-@Html.Raw(ViewBag.catItem.Description)
+  	in case you missed it the first time, this is the description:...<br />
+	@Html.Raw(ViewBag.catInfo.description)
+  	<p><h1>and nowforthe real magento call...</h1>
+	  	sessionid: @ViewBag.sessionId<br />
+	  	desc: @ViewBag.catInfo.description<br />
+	</p>
 </div>
 <script type="text/javascript">
 	  $("ul.nav li").removeClass("active");

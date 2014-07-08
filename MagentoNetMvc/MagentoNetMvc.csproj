@@ -49,6 +49,8 @@
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
@@ -65,6 +67,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CatItemController.cs" />
+    <Compile Include="Web References\mg_dev.mdoresourcing.com\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -95,6 +100,7 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Content\css\starter-template.css" />
     <Content Include="Content\css\sticky-footer-navbar.css" />
+    <Content Include="Web-example.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -118,11 +124,26 @@
     </None>
     <None Include="Content\css\bootstrap-theme.css.map" />
     <None Include="Content\css\bootstrap.css.map" />
+    <None Include="Web References\mg_dev.mdoresourcing.com\v2_soap.wsdl" />
+    <None Include="Web References\mg_dev.mdoresourcing.com\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\MagentoNetCategoryClient" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://mg-dev.mdoresourcing.com/index.php/api/v2_soap?wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\mg_dev.mdoresourcing.com</RelPath>
+      <UpdateFromURL>http://mg-dev.mdoresourcing.com/index.php/api/v2_soap?wsdl</UpdateFromURL>
+    </WebReferenceUrl>
   </ItemGroup>
 </Project>
