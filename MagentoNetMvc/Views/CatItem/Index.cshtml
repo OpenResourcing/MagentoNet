@@ -1,40 +1,54 @@
-﻿@{Layout="~/Views/Shared/_Layout_bootstrap_backbone.cshtml";}
-<script src="/Content/js/catitem-init.js"></script>
-
-<script type="text/template" id="search_template">
-  <label>CatName:</label> <input type="text" id="name" value="<%= nameValue %>" /><br />
-  <label>CatDescription:</label> <br />
-  <textarea id="description">
-  <%= descriptionValue %>
-  </textarea>
-</script>
-
-<script type="text/javascript">
-jQuery(function () {
-	var mymodel = new TestModel (
-		{
-			nameValue : "@ViewBag.catInfo.name", 
-			descriptionValue : "@Html.Raw(ViewBag.catInfo.description)"
-		}
-	);
-	var view = new ListView({model : mymodel});
-	$("#production-list").html(view.render().el);
-});
-</script>
-<h2>@ViewBag.Message</h2>
-
-
-<div id="production-list" style="align: left;">assets-list-loading...</div>
-
-<div id="cats">
-  	in case you missed it the first time, this is the description:...<br />
-	@Html.Raw(ViewBag.catInfo.description)
-  	<p><h1>and nowforthe real magento call...</h1>
-	  	sessionid: @ViewBag.sessionId<br />
-	  	desc: @ViewBag.catInfo.description<br />
-	</p>
+﻿@{Layout="~/Views/Shared/_Layout_bootstrap.cshtml";}
+<div class="row">
+    <div id="cats" class="span10">
+        <table class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Room</th>
+                    <th>Grade</th>
+                    <th>Instrument</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Me</td>
+                    <td>1</td>
+                    <td>A</td>
+                    <td>Drums</td>
+                </tr>
+                <tr>
+                    <td>Him</td>
+                    <td>4</td>
+                    <td>C</td>
+                    <td>Bass</td>
+                </tr>
+            </tbody>
+        </table>
+      	description (raw):...<br />
+    	@Html.Raw(ViewBag.catInfo.description)
+      	<p>
+            <h1>results of the magento SOAP call...</h1>
+    	  	sessionid: @ViewBag.sessionId<br />
+    	  	desc: @ViewBag.catInfo.description<br />
+    	</p>
+    </div>
+    <div class="span2">
+        this is span2...<br>
+        blah<br>
+        blah<br>
+        blah<br>
+        blah<br>
+        blah<br>
+        blah<br>
+        blah<br>
+    </div>
 </div>
 <script type="text/javascript">
-	  $("ul.nav li").removeClass("active");
-	  $("ul.nav li#menu2").addClass("active");
+ 
+  $( document ).ready(function() {
+      $("ul.nav li").removeClass("active");
+      $("ul.nav li#menu2").addClass("active");
+  });
+ 
 </script>
