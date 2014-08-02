@@ -4,10 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
-using MagentoNetMvc.MagentoNetCategoryClient;
+//using MagentoNetMvc.MagentoNetCategoryClient;
 using MagentoNetMvc.mg_dev.mdoresourcing.com;
 using System.ServiceModel;
 using System.Configuration;
+using MagentoNetMvc.Models;
 
 //using tempuri.org;
 namespace MagentoNetMvc.Controllers
@@ -37,12 +38,15 @@ namespace MagentoNetMvc.Controllers
 				var soapPassword = System.Configuration.ConfigurationManager.AppSettings ["MySOAPPassword"];
 				sessionId = client.login (soapUsername, soapPassword);
 			}
-			catalogCategoryInfo catInfo = client.catalogCategoryInfo(sessionId, id, "1", null);
+            CatItem catItem = new CatItem ();
+            try{
+    			catalogCategoryInfo catInfo = client.catalogCategoryInfo(sessionId, id, "1", null);
+                catItem.ID = 1; catItem.Title = "test Title"; catItem.Name = catInfo.name; catItem.Description = catInfo.description;
+            } catch (Exception ex){
+                // do ntohign for now
+            }
 			ViewBag.sessionId = sessionId;
-			ViewBag.catInfo = catInfo;
-
-
-			return View ();
+            return View (catItem);
 		}
 
 	}

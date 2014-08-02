@@ -1,49 +1,18 @@
 ﻿@{Layout="~/Views/Shared/_Layout_bootstrap.cshtml";}
-<div class="row">
-    <div id="cats" class="span10">
-        <table class="table table-hover table-condensed">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Room</th>
-                    <th>Grade</th>
-                    <th>Instrument</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Me</td>
-                    <td>1</td>
-                    <td>A</td>
-                    <td>Drums</td>
-                </tr>
-                <tr>
-                    <td>Him</td>
-                    <td>4</td>
-                    <td>C</td>
-                    <td>Bass</td>
-                </tr>
-            </tbody>
-        </table>
-      	description (raw):...<br />
-    	@Html.Raw(ViewBag.catInfo.description)
-      	<p>
-            <h1>results of the magento SOAP call...</h1>
-    	  	sessionid: @ViewBag.sessionId<br />
-    	  	desc: @ViewBag.catInfo.description<br />
-    	</p>
+@model MagentoNetMvc.Models.CatItem
+    <div class="row">
+        <div class="page-header">
+            <h1 id="navbar">Magento category Soap Calls</h1>
+        </div>
+        <div id="cats" class="col-lg-12">
+          	<p>
+                <h1>results of the magento SOAP call...</h1>
+        	  	sessionid: @ViewBag.sessionId<br />
+                name: @Html.DisplayTextFor(model => model.Name)<br />
+        	  	desc: @Html.DisplayTextFor(model => model.Description)<br />
+        	</p>
+        </div>
     </div>
-    <div class="span2">
-        this is span2...<br>
-        blah<br>
-        blah<br>
-        blah<br>
-        blah<br>
-        blah<br>
-        blah<br>
-        blah<br>
-    </div>
-</div>
 <script type="text/javascript">
  
   $( document ).ready(function() {

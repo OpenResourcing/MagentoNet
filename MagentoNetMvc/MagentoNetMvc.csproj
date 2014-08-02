@@ -70,6 +70,7 @@
     <Compile Include="Web References\mg_dev.mdoresourcing.com\Reference.cs">
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Models\CatItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
