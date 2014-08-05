@@ -29,21 +29,29 @@ namespace MagentoNetMvc.Controllers
 			ICategoryContract client = new CategoryContractClient (binding, address);
 			GetCatItemResult catItem = client.GetCatItem(id);
 */
-
-
-			var soapConnectionString = System.Configuration.ConfigurationManager.AppSettings ["MySOAPConnectionString"];
-			MagentoService client = new MagentoService(soapConnectionString);
-			if (String.IsNullOrEmpty(sessionId)){
-				var soapUsername = System.Configuration.ConfigurationManager.AppSettings ["MySOAPUserName"];
-				var soapPassword = System.Configuration.ConfigurationManager.AppSettings ["MySOAPPassword"];
-				sessionId = client.login (soapUsername, soapPassword);
-			}
-            CatItem catItem = new CatItem ();
+            MagentoService client = null;
             try{
-    			catalogCategoryInfo catInfo = client.catalogCategoryInfo(sessionId, id, "1", null);
-                catItem.ID = 1; catItem.Title = "test Title"; catItem.Name = catInfo.name; catItem.Description = catInfo.description;
-            } catch (Exception ex){
-                // do ntohign for now
+    			var soapConnectionString = System.Configuration.ConfigurationManager.AppSettings ["MySOAPConnectionString"];
+    			client = new MagentoService(soapConnectionString);
+    			if (String.IsNullOrEmpty(sessionId)){
+    				var soapUsername = System.Configuration.ConfigurationManager.AppSettings ["MySOAPUserName"];
+    				var soapPassword = System.Configuration.ConfigurationManager.AppSettings ["MySOAPPassword"];
+    				sessionId = client.login (soapUsername, soapPassword);
+    			}
+            } catch(Exception e){
+                sessionId = "0";
+            }
+            CatItem catItem = new CatItem ();
+            if (client != null) {
+                try {
+                    catalogCategoryInfo catInfo = client.catalogCategoryInfo (sessionId, id, "1", null);
+                    catItem.ID = 1;
+                    catItem.Title = "test Title";
+                    catItem.Name = catInfo.name;
+                    catItem.Description = catInfo.description;
+                } catch (Exception ex) {
+                    // do ntohign for now
+                }
             }
 			ViewBag.sessionId = sessionId;
             return View (catItem);
