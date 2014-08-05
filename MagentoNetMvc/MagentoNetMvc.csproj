@@ -145,6 +145,7 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Makefile" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References" />

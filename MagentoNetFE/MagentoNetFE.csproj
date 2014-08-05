@@ -94,5 +94,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Makefile" />
   </ItemGroup>
 </Project>
