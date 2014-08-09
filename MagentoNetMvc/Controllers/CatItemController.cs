@@ -16,10 +16,25 @@ namespace MagentoNetMvc.Controllers
 	public class CatItemController : Controller
 	{
 		static String sessionId = null;
+
+        public ActionResult Get() {
+            CatItem catItem = new CatItem ();
+            return Json(catItem, JsonRequestBehavior.AllowGet);
+        }
+            
+
+        public ActionResult List ()
+        {
+            ViewBag.sessionId = 0;
+            CatItem catItem = new CatItem ();
+            return View ("Index", catItem);
+        }
+
 		public ActionResult Index (int id)
 		{
 			ViewBag.Message = "Welcome to ASP.NET MVC on Mono! (viewbag)";
 			//			ViewData ["Message"] = "Welcome to ASP.NET MVC on Mono!";
+
 /*
 			// keeping this endpoint reference here in preps for when this service is ready for use
 			// ... until then we will use the SOAP services provided by the Magento-php
@@ -29,6 +44,7 @@ namespace MagentoNetMvc.Controllers
 			ICategoryContract client = new CategoryContractClient (binding, address);
 			GetCatItemResult catItem = client.GetCatItem(id);
 */
+        
             MagentoService client = null;
             try{
     			var soapConnectionString = System.Configuration.ConfigurationManager.AppSettings ["MySOAPConnectionString"];
@@ -43,19 +59,22 @@ namespace MagentoNetMvc.Controllers
             }
             CatItem catItem = new CatItem ();
             if (client != null) {
-                try {
-                    catalogCategoryInfo catInfo = client.catalogCategoryInfo (sessionId, id, "1", null);
-                    catItem.ID = 1;
-                    catItem.Title = "test Title";
-                    catItem.Name = catInfo.name;
-                    catItem.Description = catInfo.description;
-                } catch (Exception ex) {
-                    // do ntohign for now
+                if (id != null) {
+                    try {
+                        catalogCategoryInfo catInfo = client.catalogCategoryInfo (sessionId, (int)id, "1", null);
+                        catItem.ID = 1;
+                        catItem.Title = "test Title";
+                        catItem.Name = catInfo.name;
+                        catItem.Description = catInfo.description;
+                    } catch (Exception ex) {
+                        // do ntohign for now
+                    }
                 }
             }
 			ViewBag.sessionId = sessionId;
             return View (catItem);
 		}
+    
 
 	}
 }
