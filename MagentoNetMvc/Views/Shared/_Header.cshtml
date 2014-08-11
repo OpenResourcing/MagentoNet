@@ -1,4 +1,4 @@
-﻿
+﻿@using MagentoNetMvc.mg_dev.mdoresourcing.com
         <div class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -12,16 +12,21 @@
                 <div class="navbar-collapse collapse" id="navbar-main" style="height: 1px;">
                     <ul class="nav navbar-nav">
                         <li class="active" id="menu1"><a href="/">Home</a></li>
-                        <li id="menu2"><a href="/CatItem/2">CatItem Example</a></li>
-                        <li id="menu3"><a href="#contact">Contact</a></li>
-                        <li class="dropdown" id="testExpand">
+                        <!--li id="menu2"><a href="/CatItem/2">CatItem Example</a></li-->
+                        <!--li id="menu3"><a href="#contact">Contact</a></li-->
+                        @foreach (catalogCategoryEntity item in Model.catItems)
+                        {
+                            <li class="dynMenu"><a href="/CatItem/#@item.name">@item.name</a></li>
+                        }
+
+                        <!-- only really put this here for example (bootstrap) li class="dropdown" id="testExpand">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Expand...
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">item 1</a></li>
                                 <li><a href="#">item 2</a></li>
                             </ul>
-                        </li>
+                        </li-->
                     </ul>
                     <form class="navbar-form navbar-right">
                         <input id="searchQuery" class="form-control col-lg-8" type="text" placeholder="Search">

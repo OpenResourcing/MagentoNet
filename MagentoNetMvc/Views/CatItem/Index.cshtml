@@ -1,5 +1,4 @@
-﻿@{Layout="~/Views/Shared/_Layout_bootstrap.cshtml";}
-@model MagentoNetMvc.Models.CatItem
+﻿@model MagentoNetMvc.Models.CatItemModelContainer
     <div class="row">
         <div class="page-header">
             <h1 id="navbar">Magento category Soap Calls</h1>
@@ -8,8 +7,8 @@
           	<p>
                 <h1>results of the magento SOAP call...</h1>
         	  	sessionid: @ViewBag.sessionId<br />
-                name: @Html.DisplayTextFor(model => model.Name)<br />
-        	  	desc: @Html.DisplayTextFor(model => model.Description)<br />
+                name: @Html.DisplayTextFor(model => model.catItem.Name)<br />
+        	  	desc: @Html.DisplayTextFor(model => model.catItem.Description)<br />
         	</p>
         </div>
     </div>
@@ -17,7 +16,7 @@
  
   $( document ).ready(function() {
       $("ul.nav li").removeClass("active");
-      $("ul.nav li#menu2").addClass("active");
+      $("ul.nav li.dynMenu").addClass("active");
   });
  
 </script>

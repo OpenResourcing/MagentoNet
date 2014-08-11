@@ -11,11 +11,39 @@ using System.Configuration;
 using MagentoNetMvc.Models;
 
 //using tempuri.org;
+namespace MagentoNetMvc.Models
+{
+    public class CatItemModelContainer {
+        public catalogCategoryEntity[] catItems;
+        public CatItem catItem;
+    }
+}
 namespace MagentoNetMvc.Controllers
 {
 	public class CatItemController : Controller
 	{
+        CatItemModelContainer catItemModelContainer = new CatItemModelContainer ();
 		static String sessionId = null;
+        static MagentoService client = null;
+
+        void initMagentoService(){
+            try{
+                var soapConnectionString = System.Configuration.ConfigurationManager.AppSettings ["MySOAPConnectionString"];
+                client = new MagentoService(soapConnectionString);
+                if (String.IsNullOrEmpty(sessionId)){
+                    var soapUsername = System.Configuration.ConfigurationManager.AppSettings ["MySOAPUserName"];
+                    var soapPassword = System.Configuration.ConfigurationManager.AppSettings ["MySOAPPassword"];
+                    sessionId = client.login (soapUsername, soapPassword);
+                }
+            } catch(Exception e){
+                sessionId = "0";
+            }
+        }
+
+        void fetchCatItems(MagentoService client, string sessionId, string topCategory){
+            catalogCategoryTree catTree = client.catalogCategoryTree(sessionId, topCategory, "1");
+            catItemModelContainer.catItems = catTree.children;
+        }
 
         public ActionResult Get() {
             CatItem catItem = new CatItem ();
@@ -25,12 +53,23 @@ namespace MagentoNetMvc.Controllers
 
         public ActionResult List ()
         {
-            ViewBag.sessionId = 0;
+            initMagentoService ();
+            if (client != null) {
+                try {
+                    this.fetchCatItems (client, sessionId, "2");
+                } catch (Exception ex) {
+                    // do ntohign for now
+                }
+            }
+
             CatItem catItem = new CatItem ();
-            return View ("Index", catItem);
+            catItemModelContainer.catItem = catItem;
+
+            ViewBag.sessionId = sessionId;
+            return View ("Index", catItemModelContainer);
         }
 
-		public ActionResult Index (int id)
+		public ActionResult Index (int? id)
 		{
 			ViewBag.Message = "Welcome to ASP.NET MVC on Mono! (viewbag)";
 			//			ViewData ["Message"] = "Welcome to ASP.NET MVC on Mono!";
@@ -45,34 +84,31 @@ namespace MagentoNetMvc.Controllers
 			GetCatItemResult catItem = client.GetCatItem(id);
 */
         
-            MagentoService client = null;
-            try{
-    			var soapConnectionString = System.Configuration.ConfigurationManager.AppSettings ["MySOAPConnectionString"];
-    			client = new MagentoService(soapConnectionString);
-    			if (String.IsNullOrEmpty(sessionId)){
-    				var soapUsername = System.Configuration.ConfigurationManager.AppSettings ["MySOAPUserName"];
-    				var soapPassword = System.Configuration.ConfigurationManager.AppSettings ["MySOAPPassword"];
-    				sessionId = client.login (soapUsername, soapPassword);
-    			}
-            } catch(Exception e){
-                sessionId = "0";
-            }
+            initMagentoService ();
             CatItem catItem = new CatItem ();
             if (client != null) {
+                try {
+                    this.fetchCatItems(client, sessionId, "2");
+                } catch (Exception ex) {
+                    // do ntohign for now
+                }
                 if (id != null) {
-                    try {
+                    try{
                         catalogCategoryInfo catInfo = client.catalogCategoryInfo (sessionId, (int)id, "1", null);
                         catItem.ID = 1;
                         catItem.Title = "test Title";
                         catItem.Name = catInfo.name;
                         catItem.Description = catInfo.description;
+
                     } catch (Exception ex) {
                         // do ntohign for now
                     }
                 }
             }
-			ViewBag.sessionId = sessionId;
-            return View (catItem);
+            catItemModelContainer.catItem = catItem;
+
+            ViewBag.sessionId = sessionId;
+            return View (catItemModelContainer);
 		}
     
 
