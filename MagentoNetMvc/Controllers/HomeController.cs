@@ -29,7 +29,17 @@ namespace MagentoNetMvc.Controllers
             try{
                 var soapConnectionString = System.Configuration.ConfigurationManager.AppSettings ["MySOAPConnectionString"];
                 client = new MagentoService(soapConnectionString);
-                if (String.IsNullOrEmpty(sessionId)){
+
+                bool sessionValid = false;
+                if (!String.IsNullOrEmpty(sessionId)){
+                    // if we have a current sessionId, then ensure it is still valid...
+                    magentoInfoEntity magInfo = client.magentoInfo(sessionId);
+                    if (!string.IsNullOrEmpty(magInfo.magento_version))
+                    {
+                        sessionValid = true;
+                    }
+                }
+                if (!sessionValid){
                     var soapUsername = System.Configuration.ConfigurationManager.AppSettings ["MySOAPUserName"];
                     var soapPassword = System.Configuration.ConfigurationManager.AppSettings ["MySOAPPassword"];
                     sessionId = client.login (soapUsername, soapPassword);
